@@ -31,7 +31,19 @@ class ItemController extends Controller
             "results" => $item
         ], 200);
     }
-
+    public function getItemByCategoryId($cid){
+        $item = Item::where("cat_id", "=", "$cid"
+        
+        
+        
+        
+        )->get();
+        
+        return response()->json([
+            "status" => "Success",
+            "results" => $item
+        ], 200);
+    }
 
     public function addItem(Request $request){
         $I = new Item;

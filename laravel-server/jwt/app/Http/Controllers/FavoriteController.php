@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
 
+use App\Models\Favorite;
+
 class FavoriteController extends Controller
 {
     public function addFav(Request $request){

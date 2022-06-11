@@ -12,4 +12,10 @@ class redirectController extends Controller
             "message" => "STOP Messing Around"
         ], 404);
     }
+    public function notloggedin(){
+        return response()->json([
+            "status" => "Failure",
+            "message" => "You should log in to add to favorites"
+        ], 404);
+    }
 }

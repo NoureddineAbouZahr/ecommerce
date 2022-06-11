@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Favorite;
+use Auth;
 
 class FavoriteController extends Controller
 {
     public function addFav(Request $request){
         $Fav = new Favorite;
-        $Fav->u_id = $request->uid;
+        $Fav->u_id = Auth::user()->id;
         $Fav->item_id = $request->item_id;
         $Fav->save();
         

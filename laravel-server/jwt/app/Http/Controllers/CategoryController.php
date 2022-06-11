@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Category;
+use App\Models\Categorie;
 
 
 class CategoryController extends Controller
 {public function getAllCategories($id = null){
     if($id != null){
-        $cats = Category::find($id);
+        $cats = Categorie::find($id);
 
     }else{
-        $cats = Category::all();
+        $cats = Categorie::all();
     }
     
     return response()->json([
@@ -22,7 +22,7 @@ class CategoryController extends Controller
     ], 200);
 }
     public function addCategory(Request $request){
-        $cat = new Category;
+        $cat = new Categorie;
         $cat->name = $request->name;
         $cat->save();
         

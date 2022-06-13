@@ -75,3 +75,72 @@
     display: flex;
     justify-content: center;
 } */
+.ubg{
+    height: 100vh;
+
+    background-image: url('/assets/abstract-background-with-squares_23-2148995948.png');
+}
+.ap{text-align: center;
+    color: rgb(0,98,209);}
+    .at{
+        text-align: center;
+        color:rgb(0,98,209);
+        font-size: 3em;
+    }
+    .adminNav{
+        width: 100%;
+    }
+    .naav{
+        text-align: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        
+        
+        
+    }
+    
+    .ps{
+        width: 30%;
+        display: flex;
+       
+    }
+    .item{
+        border: solid 1px hsl(212, 62%, 54%) ; 
+        width: fit-content;
+        color: rgb(0,98,209);
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 9px;
+        padding: 5px;
+        box-shadow:  1px 1px 5px  rgba(29, 112, 206, 0.676);
+        background-color: aliceblue;
+        margin-right: 30px;
+        margin-bottom: 60px;
+    }
+    .items{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .imgsize{
+        height: 150px;
+        width: 150px;
+    }
+    .textdiv{
+        display: flex;
+        font-size: 20px;
+        justify-content: space-between;
+    }
+    .user{
+        user-select: none;
+    }
+    .heart{
+        transform: scale(120%);
+        background-color: pink;
+        border-radius: 50%;
+        transition: 300ms;
+    }
+    
+  

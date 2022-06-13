@@ -48,10 +48,10 @@ class ItemController extends Controller
     public function addItem(Request $request){
         $I = new Item;
         $I->name = $request->name;
-        $I->description = $request->desc;
+        $I->description = $request->description;
         $I->price = $request->price;
         $I->img = $request->img;
-        $I->cat_id = $request->cid;
+        $I->cat_id = $request->cat_id;
         $I->save();
         
         return response()->json([

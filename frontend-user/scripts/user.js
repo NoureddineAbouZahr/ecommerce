@@ -1,10 +1,27 @@
 
 var items=document.getElementById("items");
+var filter=document.getElementById("filter")
+
+
+axios({
+    method: 'get',
+    url: 'http://127.0.0.1:8000/api/Categories'
+}).then(function (response) {
+    var catgs = response.data['restos'];
+    for (let i = 0; i < catgs.length; i++) {
+        let cid = catgs[i]["id"];
+        let cname = catgs[i]["name"];
+        const option = document.createElement("option");
+        option.setAttribute("value", cid);
+        option.innerText = cname;
+        filter.append(option);
+    }
+})
+
 axios({
     method: 'get',
     url: 'http://127.0.0.1:8000/api/items',
-    headers:{Authorization:`Bearer ${localStorage.getItem('access_token')}`,
-    },
+   
 })
 .then(function(response){
     
@@ -31,9 +48,27 @@ axios({
         
         n.innerText=iname;
         fav.innerText="❤️";
+        fav.classList.add("favremove")
+        
+
         fav.addEventListener('click',function(){
-           
-            fav.classList.add("heart")
+            fav.classList.toggle("favremove")
+            fav.classList.toggle("heart")
+            let favdata=new FormData();
+            favdata.append('u_id',);
+            favdata.append('item_id',ciid);
+            
+
+
+            axios({
+                method:'post',
+                url:'http://127.0.0.1:8000/api/fav/favorite',
+                data:favdata,
+                headers:{Authorization:`Bearer ${localStorage.getItem('access_token')}`,
+            },
+
+            }).then()
+
             
         
         })
@@ -59,6 +94,7 @@ axios({
 
         
     }
+    
    
 
 
